@@ -1,5 +1,7 @@
 # Github & Tailscale Automation
 
+![Project Banner](docs/assets/github_banner.png)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Code Style: Flake8](https://img.shields.io/badge/code%20style-flake8-black.svg)](https://flake8.pycqa.org/en/latest/)
@@ -22,7 +24,11 @@ Built with Python and PyQt5, it offers a modern, responsive interface for develo
 
 ## Features
 
+For a detailed breakdown of all features, see the **[Features Documentation](docs/FEATURES.md)**.
+
 ### GitHub Automation
+
+![GitHub Automation](docs/assets/feature_github_automation.png)
 
 *   **Bulk Repository Creation**: Initialize multiple repositories with custom settings (Issues, Wiki, Projects).
 *   **Secret Management**: Securely encrypt and upload secrets to repositories.
@@ -30,6 +36,8 @@ Built with Python and PyQt5, it offers a modern, responsive interface for develo
 *   **File Management**: Upload standard files (e.g., `.gitignore`, `LICENSE`) across multiple repositories.
 
 ### Tailscale Integration
+
+![Tailscale Security](docs/assets/feature_tailscale_security.png)
 
 *   **Auth Key Generation**: Generate keys with specific capabilities (reusable, ephemeral, pre-authorized).
 *   **Tag Management**: Automatically apply ACL tags to generated keys.
