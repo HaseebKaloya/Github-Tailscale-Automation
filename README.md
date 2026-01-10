@@ -2,12 +2,41 @@
 
 ![Project Banner](docs/assets/github_banner.png)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Code Style: Flake8](https://img.shields.io/badge/code%20style-flake8-black.svg)](https://flake8.pycqa.org/en/latest/)
-[![Build Status](https://github.com/haseebkaloya/Github-Tailscale-Automation/actions/workflows/ci.yml/badge.svg)](https://github.com/haseebkaloya/Github-Tailscale-Automation/actions)
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+">
+  </a>
+  <a href="https://github.com/haseebkaloya/Github-Tailscale-Automation/actions/workflows/ci.yml">
+    <img src="https://github.com/haseebkaloya/Github-Tailscale-Automation/actions/workflows/ci.yml/badge.svg" alt="Build Status">
+  </a>
+  <a href="https://github.com/haseebkaloya/Github-Tailscale-Automation/stargazers">
+    <img src="https://img.shields.io/github/stars/haseebkaloya/Github-Tailscale-Automation" alt="GitHub Stars">
+  </a>
+  <a href="https://github.com/haseebkaloya/Github-Tailscale-Automation/network/members">
+    <img src="https://img.shields.io/github/forks/haseebkaloya/Github-Tailscale-Automation" alt="GitHub Forks">
+  </a>
+  <a href="https://github.com/haseebkaloya/Github-Tailscale-Automation/issues">
+    <img src="https://img.shields.io/github/issues/haseebkaloya/Github-Tailscale-Automation" alt="GitHub Issues">
+  </a>
+</p>
 
 A professional-grade GUI platform for automating GitHub repository management and Tailscale network security operations.
+
+---
+
+## Table of Contents
+
+*   [Overview](#overview)
+*   [Features](#features)
+*   [Getting Started](#getting-started)
+*   [Screenshots](#screenshots)
+*   [Configuration](#configuration)
+*   [Project Structure](#project-structure)
+*   [Contributing](#contributing)
+*   [License](#license)
 
 ---
 

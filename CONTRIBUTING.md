@@ -4,7 +4,7 @@ First off, thank you for considering contributing to Github&Tailscale-Automation
 
 ## Code of Conduct
 
-By participating in this project, you are expected to uphold our Code of Conduct. Please report unacceptable behavior to [haseebkaloya@gmail.com](mailto:haseebkaloya@gmail.com).
+This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [haseebkaloya@gmail.com](mailto:haseebkaloya@gmail.com).
 
 ## How Can I Contribute?
 
