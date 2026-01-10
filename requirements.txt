@@ -1,0 +1,18 @@
+# Github&Tailscale-Automation - Python Requirements
+# Author: Haseeb Kaloya
+
+# GUI Framework
+PyQt5>=5.15.9
+
+# API Libraries
+PyGithub>=2.1.1
+requests>=2.31.0
+PyNaCl>=1.5.0            # For GitHub secrets encryption
+
+# Utilities
+python-dotenv>=1.0.0
+cryptography>=41.0.0
+
+# Optional Enhancements (uncomment to enable)
+# qt-material>=2.14        # Material Design themes
+# loguru>=0.7.2            # Advanced logging
