@@ -52,7 +52,7 @@ backups/
 # resources/ (Uncommented)
 
 # PyInstaller
-*.spec
+# *.spec
 
 # Temporary files
 *.tmp
