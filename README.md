@@ -32,6 +32,7 @@ A professional-grade GUI platform for automating GitHub repository management an
 *   [Overview](#overview)
 *   [Features](#features)
 *   [Getting Started](#getting-started)
+*   [Releases](#releases)
 *   [Screenshots](#screenshots)
 *   [Configuration](#configuration)
 *   [Project Structure](#project-structure)
@@ -119,6 +120,16 @@ For a detailed breakdown of all features, see the **[Features Documentation](doc
 
 ---
 
+## Releases
+
+For users who prefer not to run the application from the source code, we provide pre-compiled executables for Windows.
+
+1.  **Navigate to the [Releases Page](https://github.com/haseebkaloya/Github-Tailscale-Automation/releases)** on the right side of the repository page.
+2.  **Download the latest `.exe` file** from the "Assets" section of the most recent release.
+3.  **Run the executable** directly on your machine. No installation is required.
+
+---
+
 ## Screenshots
 
 | Dashboard | Repository Manager |
@@ -164,3 +175,12 @@ Contributions are welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for det
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Author
+
+*   **Haseeb Kaloya**
+    *   **Email**: [haseebkaloya@gmail.com](mailto:haseebkaloya@gmail.com)
+    *   **Telegram**: [t.me/haseebkaloya](https://t.me/haseebkaloya)
+    *   **Contact**: +92 345 1622556

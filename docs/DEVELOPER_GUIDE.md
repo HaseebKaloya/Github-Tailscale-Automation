@@ -88,6 +88,26 @@ Run the test suite (if available) or manual diagnostics:
 python main.py --check
 ```
 
+### Building from Source
+
+For instructions on how to create standalone executables for Windows and Linux, please see the **[Building from Source Guide](BUILDING.md)**.
+
+### Creating a Release
+
+Once you have built the executables, you can create a new release on GitHub to make them available to your users.
+
+1.  **Draft a New Release**: Navigate to the **[Releases Page](https://github.com/haseebkaloya/Github-Tailscale-Automation/releases)** and click **"Draft a new release"**.
+
+2.  **Tag Version**: Create a new tag for your release (e.g., `v1.0.0`). It is recommended to follow [Semantic Versioning](https://semver.org/).
+
+3.  **Release Title**: Give your release a clear and descriptive title (e.g., "Version 1.0.0 - Initial Release").
+
+4.  **Describe the Release**: Write a summary of the changes, new features, and bug fixes included in this release. You can reference the `CHANGELOG.md` for this.
+
+5.  **Upload Binaries**: In the "Attach binaries" section, upload the executables you created (e.g., `Github&Tailscale-Automation.exe` and the Linux executable).
+
+6.  **Publish Release**: Click **"Publish release"** to make it publicly available.
+
 ---
 
 ## Coding Standards
