@@ -43,7 +43,7 @@ jobs:
         if [ -d "tests" ]; then pytest --cov=./ --cov-report=xml; fi
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v5
       with:
         # The Codecov token is not required for public repositories.
         # For private repositories, set the CODECOV_TOKEN secret in your repository settings.
