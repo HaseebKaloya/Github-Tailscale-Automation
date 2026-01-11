@@ -37,7 +37,15 @@ jobs:
         echo "Running flake8 checks..."
         flake8 . --count --show-source --statistics
 
-    - name: Test with pytest
+    - name: Test with pytest and generate coverage report
       run: |
-        # Run tests if the tests directory exists
-        if [ -d "tests" ]; then pytest; fi
+        # Run tests with coverage if the tests directory exists
+        if [ -d "tests" ]; then pytest --cov=./ --cov-report=xml; fi
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        # The Codecov token is not required for public repositories.
+        # For private repositories, set the CODECOV_TOKEN secret in your repository settings.
+        # token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: true

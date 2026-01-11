@@ -16,3 +16,7 @@ cryptography>=41.0.0
 # Optional Enhancements (uncomment to enable)
 # qt-material>=2.14        # Material Design themes
 # loguru>=0.7.2            # Advanced logging
+
+# Testing
+pytest-cov>=4.1.0
+codecov>=2.1.13

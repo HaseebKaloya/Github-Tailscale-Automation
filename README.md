@@ -21,6 +21,9 @@
   <a href="https://github.com/haseebkaloya/Github-Tailscale-Automation/issues">
     <img src="https://img.shields.io/github/issues/haseebkaloya/Github-Tailscale-Automation" alt="GitHub Issues">
   </a>
+  <a href="https://codecov.io/gh/haseebkaloya/Github-Tailscale-Automation">
+    <img src="https://codecov.io/gh/haseebkaloya/Github-Tailscale-Automation/branch/main/graph/badge.svg" alt="Codecov">
+  </a>
 </p>
 
 A professional-grade GUI platform for automating GitHub repository management and Tailscale network security operations.

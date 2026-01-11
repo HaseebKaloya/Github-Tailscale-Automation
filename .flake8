@@ -1,0 +1,19 @@
+[flake8]
+# Set a strict max line length
+max-line-length = 88
+
+# Ignore specific errors
+# E501: line too long (handled by black)
+# W503: line break before binary operator (black-compatible)
+ignore = E501, W503
+
+# Set a higher complexity threshold
+max-complexity = 12
+
+# Exclude directories from linting
+exclude =
+    .git,
+    __pycache__,
+    build/,
+    dist/,
+    venv/
