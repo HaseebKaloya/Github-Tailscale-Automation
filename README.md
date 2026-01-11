@@ -130,47 +130,56 @@ For users who prefer not to run the application from the source code, we provide
 
 ---
 
-<details>
-<summary>🖼️ Click to view Screenshots</summary>
-<br>
+## 🖼️ Screenshots
 
-| Dashboard | Repository Manager |
-| :---: | :---: |
-| ![Dashboard](docs/screenshots/1.png) | ![Repository Manager](docs/screenshots/2.png) |
-| *Real-time System Diagnostics* | *Bulk Repository Creation Interface* |
-
-| Tailscale | Configuration |
-| :---: | :---: |
-| ![Tailscale](docs/screenshots/3.png) | ![Configuration](docs/screenshots/4.png) |
-| *Secure Key Generation* | *API Token Management* |
-
-</details>
+<p align="center">
+  <img src="docs/screenshots/1.png" alt="Dashboard" width="49%">
+  <img src="docs/screenshots/2.png" alt="Repository Manager" width="49%">
+  <br>
+  <em>Real-time System Diagnostics & Bulk Repository Creation</em>
+</p>
+<p align="center">
+  <img src="docs/screenshots/3.png" alt="Tailscale" width="49%">
+  <img src="docs/screenshots/4.png" alt="Configuration" width="49%">
+  <br>
+  <em>Secure Key Generation & API Token Management</em>
+</p>
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
 On first launch, navigate to the **Accounts** tab to configure your credentials:
 
 1.  **GitHub Token**: Generate one at [GitHub Developer Settings](https://github.com/settings/tokens).
 2.  **Tailscale API Key**: Generate one at the [Tailscale Admin Console](https://login.tailscale.com/admin/settings/keys).
 
-Configuration is stored locally in `configs/config.json` and is excluded from version control by `.gitignore`.
+> **Note:** Configuration is stored locally in `configs/config.json` and is automatically excluded from version control by `.gitignore`.
 
 ---
 
-<details>
-<summary>📂 Click to view Project Structure</summary>
-<br>
+## 📂 Project Structure
 
-The project follows a modular architecture:
+The project follows a modular and intuitive architecture:
 
-*   `core/`: Main application logic and window management.
-*   `api/`: Wrappers for the GitHub and Tailscale APIs.
-*   `gui/`: PyQt5 widgets, dialogs, and styling components.
-*   `utils/`: Helper functions for logging, path management, and security.
+```
+.
+├── 📂 api/          # Wrappers for GitHub & Tailscale APIs
+├── 📂 core/          # Main application logic and window management
+├── 📂 docs/          # Documentation files
+├── 📂 gui/           # PyQt5 widgets, dialogs, and styling
+├── 📂 resources/     # Icons, images, and other assets
+├── 📂 utils/         # Helper functions and utilities
+├── 📜 .gitignore    # Files to be ignored by Git
+├── 📜 main.py        # Main application entry point
+└── 📜 requirements.txt # Project dependencies
+```
 
-</details>
+---
+
+## 💬 Support
+
+If you have questions, ideas, or need help, please open an issue in the [GitHub Issues](https://github.com/haseebkaloya/Github-Tailscale-Automation/issues) tab. This is the best way to get support and contribute to the discussion.
 
 ---
 

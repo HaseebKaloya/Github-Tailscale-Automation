@@ -1,40 +1,58 @@
-version: 1.0.0
-# Security Policy
+# 🛡️ Security Policy
 
-This document outlines the security procedures and policies for the **Github & Tailscale Automation** application.
-
----
+We take the security of our application and its users seriously. This document outlines our security practices and provides guidance on how to report vulnerabilities.
 
 ## Supported Versions
 
-Security updates are applied to the latest version available in the `main` branch and the most recent official release.
+We are committed to providing security updates for the following versions:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| Latest  | :white_check_mark: |
-| < 1.0.0 | :x:                |
+| `1.x`   | :white_check_mark: |
+| `< 1.0` | :x:                |
+
+When a new major version is released, we will continue to support the previous major version with critical security patches for a period of 3 months.
 
 ---
 
-## Data Handling and Storage
+## Application Security
 
-This application is designed with security as a priority. Here is how we handle your sensitive data:
+### Credential Storage
+Your API tokens for GitHub and Tailscale are sensitive credentials. Here is how we handle them:
 
-*   **Local Storage**: Your GitHub and Tailscale API tokens are stored **only on your local machine** in the `configs/config.json` file.
-*   **Encryption**: The API tokens within `config.json` are encrypted using your machine's unique hardware identifiers. This means the configuration file is not portable and will not work on another computer, providing a strong layer of security.
-*   **No Cloud Storage**: Your credentials are **never** sent to or stored on any third-party servers or cloud services by this application.
+*   **Local Encryption**: All credentials are encrypted using your operating system's native encryption capabilities and stored in the `configs/config.json` file on your local machine.
+*   **No Cloud Storage**: Your credentials are **never** uploaded to or stored on any cloud server. They are only used to communicate directly with the GitHub and Tailscale APIs from your machine.
+*   **Git Exclusion**: The `configs/` directory is explicitly excluded from version control via `.gitignore` to prevent accidental exposure.
+
+### API Communication
+All communication with the GitHub and Tailscale APIs is performed over HTTPS, ensuring that data transmitted between the application and the services is encrypted in transit.
+
+### Dependency Management
+We use a `requirements.txt` file to manage our dependencies. We strive to keep our dependencies up to date to incorporate the latest features and security patches.
+
+---
+
+## User Best Practices
+
+To enhance the security of your own workflow, we recommend the following:
+
+*   **Use Fine-Grained Tokens**: When creating a GitHub Personal Access Token, grant it only the minimum required scopes (`repo`, `workflow`).
+*   **Use Ephemeral Keys**: For short-lived environments like CI/CD runners, prefer to generate **ephemeral** Tailscale keys.
+*   **Secure Your Machine**: Since credentials are stored locally, ensure your machine is protected with a strong password and full-disk encryption if possible.
 
 ---
 
 ## Reporting a Vulnerability
 
-We take all security reports seriously. If you discover a security vulnerability within this project, please follow these steps:
+If you discover a security vulnerability, we would appreciate your help in disclosing it to us responsibly. Please follow these steps:
 
-1.  **Do not open a public GitHub issue.** Vulnerabilities should be disclosed privately.
-2.  Email the project maintainer directly at **[haseebkaloya@gmail.com](mailto:haseebkaloya@gmail.com)** with the subject line "Security Vulnerability Report: Github & Tailscale Automation".
+1.  **Do not create a public GitHub issue.**
+2.  Email the project maintainer directly at **haseebkaloya@gmail.com** with the subject line "Security Vulnerability Report".
 3.  Provide a detailed description of the vulnerability, including:
-    *   The steps to reproduce it.
+    *   Steps to reproduce it.
     *   The version of the application you are using.
-    *   Any relevant screenshots or code snippets.
+    *   Any relevant screenshots or logs.
 
-We will acknowledge your report within 48 hours and work with you to understand and resolve the issue. We appreciate your efforts in responsibly disclosing your findings and helping us keep the project safe.
+We are committed to addressing all security reports in a timely manner. We will acknowledge your email within 48 hours and work with you to understand and resolve the issue.
+
+Thank you for helping to keep our community and project safe.
