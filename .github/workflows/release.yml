@@ -31,7 +31,7 @@ jobs:
         run: pyinstaller Github_Tailscale_Automation.spec
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: windows-executable
           path: dist/Github_Tailscale_Automation.exe
