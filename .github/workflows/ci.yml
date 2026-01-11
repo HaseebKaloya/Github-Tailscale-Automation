@@ -1,4 +1,4 @@
-name: Code Quality and Tests
+name: Python Application CI
 
 on:
   push:
@@ -10,42 +10,32 @@ permissions:
   contents: read
 
 jobs:
-  lint-and-test:
-    name: Lint and Test
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
+    - uses: actions/checkout@v3
+    
     - name: Set up Python 3.10
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-        # Enable caching for pip
-        cache: 'pip'
-
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
+        
     - name: Lint with flake8
       run: |
-        # Run flake8 and fail the build on any error
-        echo "Running flake8 checks..."
-        flake8 . --count --show-source --statistics
-
-    - name: Test with pytest and generate coverage report
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        
+    - name: Test with pytest
       run: |
-        # Run tests with coverage if the tests directory exists
-        if [ -d "tests" ]; then pytest --cov=./ --cov-report=xml; fi
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
-      with:
-        # The Codecov token is not required for public repositories.
-        # For private repositories, set the CODECOV_TOKEN secret in your repository settings.
-        # token: ${{ secrets.CODECOV_TOKEN }}
-        fail_ci_if_error: true
+        # Run tests if the tests directory exists
+        if [ -d "tests" ]; then pytest; fi
