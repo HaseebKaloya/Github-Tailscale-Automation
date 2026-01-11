@@ -1,22 +1,40 @@
 version: 1.0.0
 # Security Policy
 
+This document outlines the security procedures and policies for the **Github & Tailscale Automation** application.
+
+---
+
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are currently being supported with security updates.
+Security updates are applied to the latest version available in the `main` branch and the most recent official release.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| Latest  | :white_check_mark: |
+| < 1.0.0 | :x:                |
+
+---
+
+## Data Handling and Storage
+
+This application is designed with security as a priority. Here is how we handle your sensitive data:
+
+*   **Local Storage**: Your GitHub and Tailscale API tokens are stored **only on your local machine** in the `configs/config.json` file.
+*   **Encryption**: The API tokens within `config.json` are encrypted using your machine's unique hardware identifiers. This means the configuration file is not portable and will not work on another computer, providing a strong layer of security.
+*   **No Cloud Storage**: Your credentials are **never** sent to or stored on any third-party servers or cloud services by this application.
+
+---
 
 ## Reporting a Vulnerability
 
-We take security seriously. If you discover a security vulnerability, please follow these steps:
+We take all security reports seriously. If you discover a security vulnerability within this project, please follow these steps:
 
-1.  **Do not open a public issue.**
-2.  Email the project maintainer at `haseebkaloya@gmail.com`.
-3.  Include a detailed description of the vulnerability and steps to reproduce it.
-4.  We will acknowledge your report within 48 hours and provide a timeline for a fix.
+1.  **Do not open a public GitHub issue.** Vulnerabilities should be disclosed privately.
+2.  Email the project maintainer directly at **[haseebkaloya@gmail.com](mailto:haseebkaloya@gmail.com)** with the subject line "Security Vulnerability Report: Github & Tailscale Automation".
+3.  Provide a detailed description of the vulnerability, including:
+    *   The steps to reproduce it.
+    *   The version of the application you are using.
+    *   Any relevant screenshots or code snippets.
 
-Thank you for helping keep our project safe!
+We will acknowledge your report within 48 hours and work with you to understand and resolve the issue. We appreciate your efforts in responsibly disclosing your findings and helping us keep the project safe.

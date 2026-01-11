@@ -1,119 +1,135 @@
 # User Guide
 
-Welcome to the comprehensive user manual for **Github&Tailscale-Automation**. This guide will walk you through every feature of the application, from initial setup to advanced automation workflows.
+Welcome to the official user guide for the **Github & Tailscale Automation** application. This guide provides a detailed walkthrough of every feature to help you get the most out of the tool.
+
+---
 
 ## Table of Contents
-1.  [Getting Started](#getting-started)
-2.  [Interface Overview](#interface-overview)
-3.  [Managing Accounts](#managing-accounts)
-4.  [Bulk Repository Creation](#bulk-repository-creation)
-5.  [Managing Secrets](#managing-secrets)
-6.  [Tailscale Automation](#tailscale-automation)
-7.  [System Diagnostics](#system-diagnostics)
+
+1.  [**🚀 Getting Started**](#1--getting-started)
+    *   [Installation](#installation)
+    *   [Running the Application](#running-the-application)
+2.  [**⚙️ Initial Configuration**](#2--initial-configuration)
+3.  [**💻 The Dashboard**](#3--the-dashboard)
+4.  [**📦 GitHub Automation**](#4--github-automation)
+    *   [Repositories Tab](#repositories-tab)
+    *   [Secrets Tab](#secrets-tab)
+    *   [Files Tab](#files-tab)
+    *   [Actions Tab](#actions-tab)
+5.  [**🛡️ Tailscale Integration**](#5--tailscale-integration)
+6.  [**❓ Getting Help**](#6--getting-help)
 
 ---
 
-## Getting Started
+## 1. 🚀 Getting Started
 
-### Prerequisites
-Before launching the application, ensure you have:
-*   **GitHub Personal Access Token**: Create one at [GitHub Settings > Tokens](https://github.com/settings/tokens).
-    *   **Required Scopes**: `repo`, `workflow`, `admin:org` (if using organizations).
-*   **Tailscale API Key**: Create one at [Tailscale Admin > Settings > Keys](https://login.tailscale.com/admin/settings/keys).
+### Installation
 
-### First Launch
-1.  Run the application using `python main.py` or the executable.
-2.  The application will perform a self-check on startup.
-3.  You will be greeted by the **Dashboard**.
+You have two options for installation:
 
----
+*   **From Source (Recommended for Developers)**:
+    1.  Clone the repository: `git clone https://github.com/haseebkaloya/Github-Tailscale-Automation.git`
+    2.  Navigate into the directory: `cd Github-Tailscale-Automation`
+    3.  Install dependencies: `pip install -r requirements.txt`
 
-## Interface Overview
+*   **From a Release (Recommended for End-Users)**:
+    1.  Go to the [Releases Page](https://github.com/haseebkaloya/Github-Tailscale-Automation/releases).
+    2.  Download the latest `.exe` file.
 
-The application uses a modern, sidebar-based navigation system:
+### Running the Application
 
-*   **Sidebar (Left)**: Quick access to all major modules (Accounts, Repositories, Secrets, Tailscale, etc.).
-*   **Main Content (Right)**: The active workspace for the selected module.
-*   **Status Bar (Bottom)**: Displays real-time status updates and progress.
+*   **From Source**: Run `python main.py` in your terminal.
+*   **From Executable**: Double-click the downloaded `.exe` file. No installation is needed.
 
 ---
 
-## Managing Accounts
+## 2. ⚙️ Initial Configuration
 
-Navigate to the **Accounts** tab to configure your credentials.
+On first launch, you must configure your API tokens. Navigate to the **Accounts** tab.
 
-1.  **GitHub Token**: Paste your Personal Access Token (starts with `ghp_`).
-2.  **Tailscale Key**: Paste your API Key (starts with `tskey-`).
-3.  **Tailnet**: Enter your Tailscale organization name (e.g., `example.com` or `user@gmail.com`).
-4.  Click **Save Credentials**.
-    *   *Note: Credentials are encrypted and stored locally in `configs/config.json`.*
+![Configuration](screenshots/4.png)
+*A view of the Accounts tab for credential management.*
 
----
-
-## Bulk Repository Creation
-
-This is the core feature for initializing multiple projects simultaneously.
-
-### Step 1: Naming Strategy
-Navigate to the **Repositories** tab.
-*   **Auto-Generate**: Select a prefix (e.g., `microservice-`, `app-`) and a starting number.
-    *   *Example*: `microservice-01`, `microservice-02`...
-*   **Custom List**: Manually type a list of names, one per line.
-*   **Import File**: Load a `.txt` file containing repository names.
-
-### Step 2: Configuration
-*   **Visibility**: Choose `Public` or `Private`.
-*   **Features**: Check boxes to enable **Issues**, **Wiki**, or **Projects**.
-*   **Auto-Init**: Check this to automatically create a `README.md`.
-
-### Step 3: Execution
-Click **Create Repositories**. A progress dialog will show the status of each creation.
+1.  **GitHub Token**: Paste your GitHub Personal Access Token. It must have `repo` and `workflow` scopes.
+2.  **Tailscale Key**: Paste your Tailscale API Key.
+3.  Click **Save Credentials**. Your tokens will be encrypted and stored locally.
 
 ---
 
-## Managing Secrets
+## 3. 💻 The Dashboard
 
-Securely inject API keys and secrets into your repositories without handling them manually.
+The **Monitor** tab serves as your main dashboard, providing real-time system diagnostics.
 
-### Shared Secrets
-These are secrets that apply to **all** repositories you are working on.
-1.  Create a text file with `KEY=VALUE` pairs.
-    ```env
-    AWS_ACCESS_KEY=AKIA...
-    DATABASE_URL=postgres://...
-    ```
-2.  In the **Secrets** tab, browse and select this file.
+![Dashboard](screenshots/1.png)
+*The main dashboard showing real-time system diagnostics.*
 
-### Repository-Specific Secrets
-1.  Click **Add Secret**.
-2.  Enter the Secret Name (e.g., `DEPLOY_KEY`).
-3.  Enter the Value.
-4.  Select the specific repository it applies to.
+This screen checks:
+*   **Network Status**: Verifies connectivity to GitHub and Tailscale APIs.
+*   **Dependencies**: Confirms all required libraries are installed.
+*   **Permissions**: Ensures the application can write to necessary log and configuration files.
 
 ---
 
-## Tailscale Automation
+## 4. 📦 GitHub Automation
 
-Generate authentication keys for your devices instantly.
+### Repositories Tab
 
-1.  Navigate to the **Tailscale** tab.
-2.  **Key Type**:
-    *   **Reusable**: Can be used to authenticate multiple machines (good for server fleets).
-    *   **Ephemeral**: Device is removed from network when it goes offline (good for containers/CI).
-3.  **Tags**: Enter ACL tags (e.g., `tag:prod`, `tag:web`).
-4.  Click **Generate Key**.
-5.  Copy the key immediately; it will not be shown again.
+This is the hub for bulk repository management.
+
+![Repository Manager](screenshots/2.png)
+*The interface for bulk repository creation.*
+
+1.  **Define Names**: Enter repository names manually, or use the **Auto-Generate** feature to create numbered repositories with a prefix.
+2.  **Set Options**: Choose visibility (public/private) and enable features like Issues, Wiki, and Projects.
+3.  **Execute**: Click **Create Repositories**. A progress dialog will show the status of each operation.
+
+### Secrets Tab
+
+Securely upload secrets to your repositories. Secrets are encrypted before being sent to GitHub.
+
+1.  Enter the **Secret Name** (e.g., `API_KEY`).
+2.  Enter the **Secret Value**.
+3.  Select the repositories that should receive this secret.
+4.  Click **Add Secret to Repositories**.
+
+### Files Tab
+
+Upload standard files (like `LICENSE` or `.gitignore`) to multiple repositories at once.
+
+1.  Select a standard file from the dropdown (e.g., `MIT License`).
+2.  Alternatively, click **Browse** to select a custom file from your local machine.
+3.  Choose the repositories to upload the file to.
+4.  Click **Upload File**.
+
+### Actions Tab
+
+Manually trigger GitHub Actions workflows.
+
+1.  Select one or more repositories.
+2.  Choose the workflow you wish to run from the dropdown menu.
+3.  Click **Trigger Workflow**.
 
 ---
 
-## System Diagnostics
+## 5. 🛡️ Tailscale Integration
 
-If you encounter issues, go to the **Monitor** or **About** tab to run diagnostics.
+Generate Tailscale authentication keys directly from the application.
 
-*   **Network Check**: Verifies connectivity to GitHub and Tailscale APIs.
-*   **Permission Check**: Ensures the app can write to logs and config files.
-*   **Dependency Check**: Verifies all Python libraries are installed correctly.
+![Tailscale Integration](screenshots/3.png)
+*The interface for generating Tailscale auth keys.*
+
+1.  Navigate to the **Secrets** tab and then the **Tailscale** sub-tab.
+2.  Choose the **Key Type**:
+    *   **Reusable**: For servers or long-lived devices.
+    *   **Ephemeral**: For CI/CD runners or temporary containers. The device is removed from your tailnet when it goes offline.
+3.  (Optional) Add **ACL Tags** to apply to the device (e.g., `tag:server`).
+4.  Click **Generate Key**. The key will be displayed once and copied to your clipboard. **Store it immediately**, as it will not be shown again.
 
 ---
 
-*For technical details, please refer to the [Developer Guide](DEVELOPER_GUIDE.md).*
+## 6. ❓ Getting Help
+
+If you encounter any issues:
+
+*   First, check the **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** guide for common solutions.
+*   If the issue persists, please [open an issue](https://github.com/haseebkaloya/Github-Tailscale-Automation/issues) on our GitHub repository.
