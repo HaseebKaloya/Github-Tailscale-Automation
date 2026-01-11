@@ -130,7 +130,9 @@ For users who prefer not to run the application from the source code, we provide
 
 ---
 
-## Screenshots
+<details>
+<summary>🖼️ Click to view Screenshots</summary>
+<br>
 
 | Dashboard | Repository Manager |
 | :---: | :---: |
@@ -141,6 +143,8 @@ For users who prefer not to run the application from the source code, we provide
 | :---: | :---: |
 | ![Tailscale](docs/screenshots/3.png) | ![Configuration](docs/screenshots/4.png) |
 | *Secure Key Generation* | *API Token Management* |
+
+</details>
 
 ---
 
@@ -155,7 +159,9 @@ Configuration is stored locally in `configs/config.json` and is excluded from ve
 
 ---
 
-## Project Structure
+<details>
+<summary>📂 Click to view Project Structure</summary>
+<br>
 
 The project follows a modular architecture:
 
@@ -163,6 +169,8 @@ The project follows a modular architecture:
 *   `api/`: Wrappers for the GitHub and Tailscale APIs.
 *   `gui/`: PyQt5 widgets, dialogs, and styling components.
 *   `utils/`: Helper functions for logging, path management, and security.
+
+</details>
 
 ---
 
